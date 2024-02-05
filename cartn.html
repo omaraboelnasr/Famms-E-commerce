@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Libre+Baskerville:ital@1&family=Montserrat:wght@400;500;600&family=Pacifico&family=Prata&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navBG">
+        <div class="nav">
+            <div class="nav-cont">
+                <a href="home.html"><img src="images/logo.png" alt=""></a>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="home.html#mensSection">MEN'S</a></li>
+                    <li><a href="home.html#womensSection">WOMEN'S</a></li>
+                    <li><a href="home.html#kidsSection">KID'S</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="cartSection">
+        <div class="cartHeader">
+            <div class="cartCont">
+                <h1><span>Y</span>our <span>C</span>art</h1>
+                <div class="cart">
+                    <ul class="cart-items" id="cart-items">
+                    </ul>
+                </div>
+                <div class="cart2">
+                    <h2>Cart Total: <span id="total">$0.00</span></h2>
+                    <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                    <p>Deliver: $0.00</p>
+                    <p>Total: <span id="cartTotal">$0.00</span></p>
+                    <button id="checkOutBtn"><a href="checkout.html">Check Out</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="cartImage"><img src="images/fa.png" alt=""></div>
+        <div class="cl"></div>
+    </div>
+    <div class="footer">
+        <div class="footercont">
+            <div class="fot1">
+                <img src="images/logo.png" alt="">
+                <p><span>Address : </span>28 Orouba st , Cairo , Egypt</p>
+                <p><span>Mobile Number : </span>+20 123456789</p>
+                <p><span>Email : </span>Famms@Famms.com</p>
+            </div>
+            <div class="fot2">
+                <h2>MENU</h2>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="fot2">
+                <h2>SOCIAL MEDIA</h2>
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i> FammsFashion</a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i> FammsFashion</a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i> FammsFashion</a></li>
+                </ul>
+            </div>
+            <div class="fot2">
+                <h2>NEWSLETTER</h2>
+                <p>Subscribe by our newsletter and get update protidin.</p>
+                <div class="newsle">
+                    <input type="email" name="email" id="emailinput" placeholder="Enter Your Mail">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function displayCart() {
+            var cartContainer = document.getElementById("cart-items");
+            var totalElement = document.getElementById("total");
+            var subtotalElement = document.getElementById("subtotal");
+            var cartTotalElement = document.getElementById("cartTotal");
+
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cartData.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                totalElement.textContent = "$0.00";
+                subtotalElement.textContent = "$0.00";
+                cartTotalElement.textContent = "$0.00";
+                return;
+            }
+
+            cartContainer.innerHTML = "";
+
+            cartData.forEach(function (product) {
+                var cartItem = document.createElement("ol");
+                cartItem.className = "items";
+
+                var img = document.createElement("img");
+                img.src = product.imagePath;
+                img.alt = product.name;
+
+                var productName = document.createElement("p");
+                productName.textContent = product.name;
+
+                var price = document.createElement("p");
+                price.innerHTML = "<span>$" + (product.price * product.quantity).toFixed(2) + "</span>";
+
+                var buttonsDiv = document.createElement("div");
+                buttonsDiv.className = "buttns";
+
+                var plusButton = document.createElement("button");
+                plusButton.className = "plus-btn";
+                plusButton.type = "button";
+                plusButton.textContent = "+";
+                plusButton.addEventListener('click', function () {
+                    updateQuantity(product, 1);
+                });
+
+                var quantity = document.createElement("p");
+                quantity.textContent = product.quantity;
+
+                var minusButton = document.createElement("button");
+                minusButton.className = "minus-btn";
+                minusButton.type = "button";
+                minusButton.textContent = "-";
+                minusButton.addEventListener('click', function () {
+                    updateQuantity(product, -1);
+                });
+
+                var removeButton = document.createElement("button");
+                removeButton.className = 'remove-btn';
+                removeButton.type = "button";
+                removeButton.innerHTML = '<i class="fa fa-trash-o"></i>';
+                removeButton.addEventListener('click', function () {
+                    updateQuantity(product, 0);
+                })
+
+                buttonsDiv.appendChild(plusButton);
+                buttonsDiv.appendChild(quantity);
+                buttonsDiv.appendChild(minusButton);
+                buttonsDiv.appendChild(removeButton);
+
+                cartItem.appendChild(img);
+                cartItem.appendChild(productName);
+                cartItem.appendChild(price);
+                cartItem.appendChild(buttonsDiv);
+
+                cartContainer.appendChild(cartItem);
+            });
+
+            var total = calculateTotal(cartData);
+            var subtotal = 0.03 * total;
+            var deliver = 0;
+            var cartTotal = total + subtotal + deliver;
+
+            totalElement.textContent = "$" + total.toFixed(2);
+            subtotalElement.textContent = "$" + subtotal.toFixed(2);
+            cartTotalElement.textContent = "$" + cartTotal.toFixed(2);
+        }
+
+
+        function calculateTotal(cartData) {
+            return cartData.reduce(function (total, product) {
+                return total + (product.price * product.quantity);
+            }, 0);
+        }
+
+        function updateQuantity(product, change) {
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            var index = cartData.findIndex(function (item) {
+                return item.id === product.id;
+            });
+
+            if (index !== -1) {
+                if (change == 0) {
+                    cartData[index].quantity = change;
+                }
+                if (change !== 0) {
+                    cartData[index].quantity = (cartData[index].quantity) + change;
+                }
+
+                if (cartData[index].quantity === 0) {
+                    cartData.splice(index, 1);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cartData));
+
+                displayCart();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', displayCart);
+    </script>
+
+
+
+
+
+</body>
+
+</html>

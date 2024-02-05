@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Cart Redirect Extension",
+    "version": "1.0",
+    "description": "Prompt to go to the cart page.",
+    "icons": {
+        "64": "icon-64.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon-64.png"
+    }
+}

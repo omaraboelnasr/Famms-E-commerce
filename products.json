@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p1.png",
+    "price": 999.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 2,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p2.png",
+    "price": 499.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 3,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p8.png",
+    "price": 79.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 4,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p9.png",
+    "price": 299.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 5,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p11.png" ,
+    "price": 599.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 6,
+    "name": "Men`s Shirt",
+    "imagePath": "images/p10.png",
+    "price": 399.99,
+    "category":"men",
+    "quantity":1
+  },
+  {
+    "id": 7,
+    "name": "Women`s Dress",
+    "imagePath": "images/p3.png",
+    "price": 89.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 8,
+    "name": "Women`s Dress",
+    "imagePath": "images/p4.png",
+    "price": 129.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 9,
+    "name": "Women`s Dress",
+    "imagePath": "images/p5.png",
+    "price": 79.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 10,
+    "name": "Women`s Dress",
+    "imagePath": "images/p6.png",
+    "price": 249.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 11,
+    "name": "Women`s Dress",
+    "imagePath":"images/p7.png",
+    "price": 149.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 12,
+    "name": "Women`s Dress",
+    "imagePath": "images/p12.png",
+    "price": 199.99,
+    "category":"women",
+    "quantity":1
+  },
+  {
+    "id": 13,
+    "name": "Kid`s Dress",
+    "imagePath": "images/p13.png",
+    "price": 29.99,
+    "category":"kids",
+    "quantity":1
+  },
+  {
+    "id": 14,
+    "name": "Kid`s Dress",
+    "imagePath": "images/p14.jpg",
+    "price": 49.99,
+    "category":"kids",
+    "quantity":1
+  },
+  {
+    "id": 15,
+    "name": "Kid`s Dress",
+    "imagePath": "images/p18.png",
+    "price": 69.99,
+    "category":"kids",
+    "quantity":1
+  },
+  {
+    "id": 16,
+    "name": "Kid`s blue jeans",
+    "imagePath": "images/p16.png",
+    "price": 129.99,
+    "category":"kids",
+    "quantity":1
+  },
+  {
+    "id": 17,
+    "name": "kid`s black T-shirt",
+    "imagePath": "images/p17.png",
+    "price": 399.99,
+    "category":"kids",
+    "quantity":1
+  },
+  {
+    "id": 18,
+    "name": "Kid`s Outfit",
+    "imagePath": "images/p15.png",
+    "price": 149.99,
+    "category":"kids",
+    "quantity":1
+  }
+]

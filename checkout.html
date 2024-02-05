@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Libre+Baskerville:ital@1&family=Montserrat:wght@400;500;600&family=Pacifico&family=Prata&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navBG">
+        <div class="nav">
+            <div class="nav-cont">
+                <a href="home.html"><img src="images/logo.png" alt=""></a>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="home.html#mensSection">MEN'S</a></li>
+                    <li><a href="home.html#womensSection">WOMEN'S</a></li>
+                    <li><a href="home.html#kidsSection">KID'S</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="cartn.html"><i class="fa-solid fa-cart-shopping"></i><span
+                                id="numberInCart"></span></a></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="checkOut">
+        <div class="checkOutCont">
+            <form >
+                <h1><span>C</span>heck <span>O</span>ut</h1>
+                <h2>Personal Information</h2>
+                <p>Full Name</p>
+                <input type="text" class="inputbox" name="full_name" id="fullName" required />
+                <p class="checkOutCheckd">*Please write valid name</p>
+
+                <p>Phone Number</p>
+                <input type="tel" class="inputbox" name="phone_number" id="phoneNumber" required />
+                <p class="checkOutCheckd">*Please write valid number</p>
+                <p>Email</p>
+                <input type="email" class="inputbox" name="email" id="userEmail" required />
+                <p class="checkOutCheckd">*Please write valid email</p>
+                <p>Address</p>
+                <textarea class="inputbox" name="address" id="userAddress" required></textarea>
+                <p class="checkOutCheckd">*Please write your address</p>
+                <h2>Payment Information</h2>
+                <p>Cardholder Name</p>
+                <input type="text" class="inputbox" name="name" id="cardHolderName" required />
+                <p class="checkOutCheckd">*Please write vaild card name</p>
+                <p>Card Number</p>
+                <input type="number" class="inputbox" name="card_number" id="card_number" required />
+                <p class="checkOutCheckd">*Please write vaild card number</p>
+                <p>Card Type</p>
+                <select class="inputbox" name="card_type" id="card_type" required>
+                    <option value="">--Select a Card Type--</option>
+                    <option value="Visa">Visa</option>
+                    <option value="RuPay">RuPay</option>
+                    <option value="MasterCard">MasterCard</option>
+                </select>
+                <p class="checkOutCheckd">*Please write vaild card type</p>
+
+                <div class="expcvv">
+                    <p class="expcvv_text">Expiry</p>
+                    <input type="month" class="inputboxS" name="exp_date" id="exp_date" required />
+                    <p class="checkOutCheckd2">*unvalid</p>
+                    <p class="expcvv_text2">CVV</p>
+                    <input type="password" class="inputboxS" name="cvv" id="cvv" required />
+                    <p class="checkOutCheckd2">*unvalid</p>
+                </div>
+                <button type="submit">Check Out</button>
+            </form>
+        </div>
+        <div class="bgCheck">
+            <img src="images/check3.png" alt="">
+        </div>
+    </div>
+
+    <div class="paymentSuccess">
+            <img src="images/payment-done.png" alt="">
+        </div>
+
+    <div class="cl"></div>
+    </div>
+    <div class="footer">
+        <div class="footercont">
+            <div class="fot1">
+                <img src="images/logo.png" alt="">
+                <p><span>Address : </span>28 Orouba st , Cairo , Egypt</p>
+                <p><span>Mobile Number : </span>+20 123456789</p>
+                <p><span>Email : </span>Famms@Famms.com</p>
+            </div>
+            <div class="fot2">
+                <h2>MENU</h2>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="fot2">
+                <h2>SOCIAL MEDIA</h2>
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i> FammsFashion</a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i> FammsFashion</a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i> FammsFashion</a></li>
+                </ul>
+            </div>
+            <div class="fot2">
+                <h2>NEWSLETTER</h2>
+                <p>Subscribe by our newsletter and get update protidin.</p>
+                <div class="newsle">
+                    <input type="email" name="email" id="emailinput" placeholder="Enter Your Mail">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var fullName = document.getElementById('fullName')
+        var fullNameregex = /^[A-Za-z\s'-]+$/
+        var phoneNumber = document.getElementById('phoneNumber')
+        var phoneRegex = /^\d{11}$/;
+        var emailAddress = document.getElementById('userEmail')
+        var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+        var address = document.getElementById('userAddress');
+        var cardholderName = document.getElementById('cardHolderName')
+        var cardholderNameRegex = /^[A-Za-z\s'-]+$/
+        var cardNumber = document.getElementById('card_number')
+        var cardNumberRegex = /^\d{16}$/
+        var cardType = document.getElementById('card_type')
+        var cardExpDate = document.getElementById('exp_date')
+        var cardExpDateRegex = /^\d{4}-\d{2}$/
+        var cardcvv = document.getElementById('cvv')
+        var cvvRegex = /^\d{3}$/;
+        var checkdStatus = document.getElementsByClassName('checkOutCheckd')
+        var checkdStatus2 = document.getElementsByClassName('checkOutCheckd2')
+        var form = document.getElementsByTagName('form')[0]
+
+
+        form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var hasValidationError = false
+
+                if (!fullName.value.match(fullNameregex)) {
+                    checkdStatus[0].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[0].style.visibility = 'hidden'
+                }
+
+                if (!phoneNumber.value.match(phoneRegex)) {
+                    checkdStatus[1].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[1].style.visibility = 'hidden'
+                }
+
+                if (!emailAddress.value.match(emailRegex)) {
+                    checkdStatus[2].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[2].style.visibility = 'hidden'
+                }
+
+                if (address.value.trim() === '') {
+                    checkdStatus[3].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[3].style.visibility = 'hidden'
+                }
+
+                if (!cardholderName.value.match(cardholderNameRegex)) {
+                    checkdStatus[4].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[4].style.visibility = 'hidden'
+                }
+
+                if (!cardNumber.value.match(cardNumberRegex)) {
+                    checkdStatus[5].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[5].style.visibility = 'hidden'
+                }
+
+                if (cardType.value === '') {
+                    checkdStatus[6].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus[6].style.visibility = 'hidden'
+                }
+
+                if (!cardExpDate.value.match(cardExpDateRegex)) {
+                    checkdStatus2[0].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus2[0].style.visibility = 'hidden'
+                }
+
+                if (!cardcvv.value.match(cvvRegex)) {
+                    checkdStatus2[1].style.visibility = 'visible'
+                    hasValidationError = true
+                }else{
+                    checkdStatus2[1].style.visibility = 'hidden'
+                }
+
+                if(!hasValidationError){
+                    addToOrder(fullName.value, phoneNumber.value, emailAddress.value, address.value)
+                    localStorage.removeItem('cart')
+                    var checkImg = document.getElementsByClassName('paymentSuccess')[0]
+                    checkImg.style.visibility = 'visible'
+                    setTimeout(() => {
+                        window.open('home.html','_self')
+                    }, 1500);
+                }
+                
+            });
+
+            function addToOrder(fullName, phoneNumber, emailAddress, address) {
+                let cart = JSON.parse(localStorage.getItem('cart'));
+                let localOrder = JSON.parse(localStorage.getItem('order')) || [];
+                let order = {
+                    fullname: fullName,
+                    phone: phoneNumber,
+                    emailAddress: emailAddress,
+                    address: address,
+                    cart: cart,
+                    orderId: Math.floor(Math.random() * 1000)
+                };
+                localOrder.push(order);
+                localStorage.setItem('order', JSON.stringify(localOrder));
+            }
+
+    </script>
+
+
+</body>
+
+</html>
